@@ -1,0 +1,36 @@
+<!-- Footer Component -->
+<footer class="site-footer">
+    <div class="footer-container">
+        <!-- Footer Content -->
+        <div class="footer-row">
+            <div class="footer-col">
+                <h4>المكتبة الشيعية</h4>
+                <p>مكتبة رقمية مخصصة للكتب الشيعية والإسلامية</p>
+            </div>
+            
+            <div class="footer-col">
+                <h4>روابط سريعة</h4>
+                <ul>
+                    <li><a href="{{ '/' | relative_url }}">الرئيسية</a></li>
+                    <li><a href="{{ '/about' | relative_url }}">عن المكتبة</a></li>
+                    <li><a href="{{ '/contributions' | relative_url }}">المساهمات</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h4>المزيد</h4>
+                <ul>
+                    <li><a href="{{ '/privacy' | relative_url }}">سياسة الخصوصية</a></li>
+                    <li><a href="{{ '/license' | relative_url }}">الترخيص</a></li>
+                    <li><a href="https://github.com/esaacmanga-alt/mktba">GitHub</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Copyright -->
+        <div class="footer-bottom">
+            <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}. جميع الحقوق محفوظة.</p>
+            <p>Built with <span class="heart">❤</span> using Jekyll & GitHub Pages</p>
+        </div>
+    </div>
+</footer>

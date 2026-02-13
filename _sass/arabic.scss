@@ -1,0 +1,207 @@
+// Arabic and RTL Support
+
+body {
+    direction: rtl;
+    text-align: right;
+    font-family: 'Droid Arabic Naskh', 'Cairo', 'Traditional Arabic', sans-serif;
+    line-height: 2;  // Arabic text benefits from increased line height
+}
+
+// Text alignment
+.text-right {
+    text-align: right;
+}
+
+.text-left {
+    text-align: left;
+    direction: ltr;
+}
+
+.text-center {
+    text-align: center;
+}
+
+// Margins and padding for RTL
+// Note: flexbox and grid automatically handle direction
+.mr-auto { margin-left: auto; margin-right: 0; }
+.ml-auto { margin-right: auto; margin-left: 0; }
+.pr-auto { padding-left: auto; padding-right: 0; }
+.pl-auto { padding-right: auto; padding-left: 0; }
+
+// Borders
+.border-right {
+    border-right: 2px solid $border-color;
+    padding-right: $spacing-md;
+}
+
+.border-left {
+    border-left: 2px solid $border-color;
+    padding-left: $spacing-md;
+}
+
+// Specific Arabic styling
+.book-text {
+    line-height: 2.2;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+    
+    // Quranic verses styling
+    .verse {
+        background-color: $background-light;
+        padding: $spacing-md;
+        border-right: 4px solid $secondary-color;
+        margin: $spacing-md 0;
+        font-weight: 500;
+        border-radius: 4px;
+    }
+    
+    // Hadith styling
+    .hadith {
+        background-color: lighten($secondary-color, 45%);
+        padding: $spacing-md;
+        border-right: 4px solid $secondary-color;
+        margin: $spacing-md 0;
+        font-style: italic;
+        border-radius: 4px;
+    }
+    
+    // Poetry (Shi'a poetry)
+    .poetry {
+        text-align: center;
+        font-style: italic;
+        margin: $spacing-lg 0;
+        padding: $spacing-md;
+        border-top: 1px solid $border-color;
+        border-bottom: 1px solid $border-color;
+    }
+    
+    // Diacritical marks (for Quran)
+    .diacritic {
+        font-size: 0.9em;
+        position: relative;
+        top: -0.5em;
+    }
+}
+
+// Header styles for different levels
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: $spacing-lg;
+    line-height: 1.4;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: $spacing-md;
+    margin-top: $spacing-lg;
+    line-height: 1.4;
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: $spacing-md;
+    margin-top: $spacing-md;
+    line-height: 1.4;
+}
+
+// Lists
+ul, ol {
+    margin-right: $spacing-md;
+    margin-bottom: $spacing-md;
+    padding-right: $spacing-lg;
+}
+
+li {
+    margin-bottom: $spacing-sm;
+}
+
+// Quotes
+blockquote {
+    border-right: 4px solid $secondary-color;
+    padding-right: $spacing-md;
+    margin-right: $spacing-md;
+    color: $text-light;
+    font-style: italic;
+    margin-bottom: $spacing-md;
+}
+
+// Tables
+table {
+    width: 100%;
+    margin-bottom: $spacing-md;
+    border-collapse: collapse;
+    
+    th {
+        background-color: $primary-color;
+        color: white;
+        padding: $spacing-sm;
+        text-align: right;
+        border: 1px solid $border-color;
+    }
+    
+    td {
+        padding: $spacing-sm;
+        border: 1px solid $border-color;
+    }
+    
+    tr:nth-child(even) {
+        background-color: $background-light;
+    }
+}
+
+// Code blocks
+code {
+    font-family: $font-mono;
+    background-color: $background-light;
+    padding: 2px 6px;
+    border-radius: 3px;
+    direction: ltr;
+    text-align: left;
+}
+
+pre {
+    background-color: $primary-color;
+    color: white;
+    padding: $spacing-md;
+    border-radius: 4px;
+    overflow-x: auto;
+    margin-bottom: $spacing-md;
+    direction: ltr;
+    text-align: left;
+    border-left: 4px solid $secondary-color;
+    
+    code {
+        background: none;
+        color: white;
+        padding: 0;
+    }
+}
+
+// Arabic number display
+.numbers-arabic {
+    font-variant-numeric: arabic-indic;
+}
+
+// Emphasis
+strong, .font-bold {
+    font-weight: 700;
+}
+
+em, .font-italic {
+    font-style: italic;
+}
+
+// Highlight for search results
+.highlight {
+    background-color: #ffd700;
+    padding: 1px 3px;
+    border-radius: 2px;
+}
+
+// Diacritical support
+.fatha::after { content: '\064e'; }
+.damma::after { content: '\064e'; }
+.kasra::after { content: '\0650'; }

@@ -1,0 +1,135 @@
+---
+layout: default
+---
+
+<div class="book-reader-container">
+    <!-- Top Navigation Bar -->
+    <nav class="book-navbar">
+        <div class="nav-left">
+            <a href="{{ '/' | relative_url }}" class="nav-btn" title="الرئيسية">
+                <span class="icon">🏠</span>
+            </a>
+            <a href="javascript:history.back()" class="nav-btn" title="رجوع">
+                <span class="icon">←</span>
+            </a>
+        </div>
+        
+        <div class="nav-center">
+            <h1 class="book-navbar-title">{{ page.title }}</h1>
+        </div>
+        
+        <div class="nav-right">
+            <button class="nav-btn dark-mode-toggle" title="تبديل الوضع الليلي">
+                <span class="icon">🌙</span>
+            </button>
+            <button class="nav-btn search-toggle" title="بحث">
+                <span class="icon">🔍</span>
+            </button>
+            <button class="nav-btn menu-toggle" title="القائمة">
+                <span class="icon">☰</span>
+            </button>
+        </div>
+    </nav>
+    
+    <!-- Search Panel (Hidden by default) -->
+    {% include search-box.html %}
+    
+    <div class="book-content-wrapper">
+        <!-- Right Sidebar with Table of Contents -->
+        <aside class="book-sidebar">
+            <div class="sidebar-header">
+                <h2>محتويات الكتاب</h2>
+            </div>
+            
+            <div class="toc-container">
+                {% include toc-generator.html %}
+            </div>
+            
+            <!-- Book Metadata -->
+            <div class="book-metadata">
+                <div class="metadata-item">
+                    <span class="label">المؤلف:</span>
+                    <span class="value">{{ page.author }}</span>
+                </div>
+                <div class="metadata-item">
+                    <span class="label">عدد الصفحات:</span>
+                    <span class="value">{{ page.pages }}</span>
+                </div>
+            </div>
+        </aside>
+        
+        <!-- Main Content Area -->
+        <article class="book-content">
+            <!-- Breadcrumb Navigation -->
+            <nav class="breadcrumb">
+                <a href="{{ '/' | relative_url }}">الرئيسية</a>
+                <span class="separator">/</span>
+                <span>{{ page.section }}</span>
+                <span class="separator">/</span>
+                <span>{{ page.title }}</span>
+            </nav>
+            
+            <!-- Book Title -->
+            <header class="book-header">
+                <h1>{{ page.title }}</h1>
+                <p class="book-author-byline">تأليف: {{ page.author }}</p>
+            </header>
+            
+            <!-- Book Text Content -->
+            <div class="book-text">
+                {{ content }}
+            </div>
+            
+            <!-- Bottom Pagination -->
+            <nav class="book-pagination">
+                <div class="pagination-prev">
+                    {% if page.previous %}
+                        <a href="{{ page.previous.url | relative_url }}" class="btn-nav btn-nav-prev">
+                            <span>← الفصل السابق</span>
+                        </a>
+                    {% endif %}
+                </div>
+                
+                <div class="pagination-info">
+                    <span class="page-indicator">الصفحة 1 من {{ page.pages }}</span>
+                </div>
+                
+                <div class="pagination-next">
+                    {% if page.next %}
+                        <a href="{{ page.next.url | relative_url }}" class="btn-nav btn-nav-next">
+                            <span>الفصل التالي →</span>
+                        </a>
+                    {% endif %}
+                </div>
+            </nav>
+        </article>
+    </div>
+</div>
+
+<script>
+    // Set up TOC highlighting
+    document.addEventListener('DOMContentLoaded', function() {
+        const headings = document.querySelectorAll('.book-text h1, .book-text h2, .book-text h3');
+        const tocLinks = document.querySelectorAll('.toc-container a');
+        
+        // Intersection Observer for TOC highlighting
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    tocLinks.forEach(link => link.classList.remove('active'));
+                    const targetLink = document.querySelector(`.toc-container a[href="#${entry.target.id}"]`);
+                    if (targetLink) {
+                        targetLink.classList.add('active');
+                    }
+                }
+            });
+        }, { rootMargin: '-50% 0px -50% 0px' });
+        
+        headings.forEach(heading => {
+            if (!heading.id) {
+                heading.id = 'heading-' + Math.random().toString(36).substr(2, 9);
+            }
+            observer.observe(heading);
+        });
+    });
+</script>

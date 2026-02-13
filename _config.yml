@@ -1,0 +1,83 @@
+# Jekyll Configuration for Shia Islamic Digital Library
+# مكتبة شيعية رقمية
+
+# Site Settings
+title: المكتبة الشيعية الرقمية
+description: مكتبة رقمية متتخصصة في الكتب الشيعية والإسلامية
+author: المكتبة الشيعية
+lang: ar
+locale: ar_SA
+
+# URL and baseurl for GitHub Pages
+url: "https://esaacmanga-alt.github.io"
+baseurl: "/mktba"
+timezone: Asia/Baghdad
+
+# Build Settings
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  hard_wrap: false
+  
+# Sass
+sass:
+  load_paths:
+    - _sass
+  style: compressed
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Collections
+collections:
+  books:
+    output: true
+    permalink: /:collection/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+  - scope:
+      path: ""
+      type: "books"
+    values:
+      layout: "book"
+
+# Exclude folders from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - CONTRIBUTING.md
+  - BOOK_TEMPLATE.md
+  - LICENSE
+  - node_modules
+  - .sass-cache
+  - .jekyll-cache
+  - vendor/bundle/
+
+# Include folders in build
+include:
+  - .htaccess
+
+# Pagination
+paginate: 10
+paginate_path: "/page:num/"
+
+# Feed
+feed:
+  post_limit: 20
+
+# SEO
+social:
+  name: "Shia Islamic Digital Library"
+  links:
+    - "https://github.com/esaacmanga-alt/mktba"

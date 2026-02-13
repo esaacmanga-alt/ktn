@@ -1,0 +1,30 @@
+# Jekyll build output
+_site/
+.jekyll-cache/
+.jekyll-metadata
+
+# Dependencies
+Gemfile.lock
+vendor/
+node_modules/
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# OS
+Thumbs.db
+.env
+.env.local
+
+# Build artifacts
+*.gem
+*.rbc
+.bundle
+.byebug_history
+.sass-cache/
+dist/

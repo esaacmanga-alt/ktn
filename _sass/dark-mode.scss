@@ -1,0 +1,159 @@
+// Dark Mode Styles
+// Applied when .dark-mode class is on html element
+
+html.dark-mode {
+    color-scheme: dark;
+    
+    body {
+        background-color: $dark-bg;
+        color: $dark-text;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        color: lighten($dark-text, 10%);
+    }
+    
+    a {
+        color: #64b5f6;
+        
+        &:hover {
+            color: lighten(#64b5f6, 10%);
+        }
+    }
+    
+    .site-header {
+        background-color: $dark-bg-secondary;
+        border-bottom-color: #404040;
+    }
+    
+    .site-footer {
+        background-color: $dark-bg-secondary;
+        border-top-color: #404040;
+        color: $dark-text-light;
+    }
+    
+    .book-card {
+        background-color: $dark-bg-secondary;
+        border-color: #404040;
+        
+        .book-title {
+            color: lighten($dark-text, 10%);
+        }
+        
+        .book-author,
+        .book-description {
+            color: $dark-text-light;
+        }
+    }
+    
+    .hero-section {
+        background: linear-gradient(135deg, $dark-bg-secondary 0%, darken($dark-bg-secondary, 5%) 100%);
+        
+        .hero-title {
+            color: lighten($dark-text, 15%);
+        }
+        
+        .hero-subtitle {
+            color: $dark-text-light;
+        }
+    }
+    
+    .book-navbar {
+        background-color: $dark-bg-secondary;
+        border-bottom-color: #404040;
+        color: $dark-text;
+    }
+    
+    .book-sidebar {
+        background-color: $dark-bg-secondary;
+        border-right-color: #404040;
+        
+        h2 {
+            color: lighten($dark-text, 10%);
+        }
+        
+        .toc-link {
+            color: $dark-text-light;
+            
+            &:hover,
+            &.active {
+                color: #64b5f6;
+            }
+        }
+    }
+    
+    .book-content {
+        background-color: $dark-bg;
+        color: $dark-text;
+    }
+    
+    .search-box {
+        background-color: $dark-bg-secondary;
+        border-color: #404040;
+        
+        .search-input {
+            background-color: $dark-bg;
+            color: $dark-text;
+            
+            &::placeholder {
+                color: $dark-text-light;
+            }
+        }
+    }
+    
+    .search-results {
+        background-color: $dark-bg-secondary;
+        border-color: #404040;
+        
+        .search-result-item {
+            border-bottom-color: #404040;
+            color: $dark-text-light;
+            
+            .search-result-title {
+                color: lighten($dark-text, 10%);
+            }
+            
+            &:hover {
+                background-color: lighten($dark-bg-secondary, 5%);
+            }
+        }
+    }
+    
+    .btn-primary {
+        background-color: #1e88e5;
+        
+        &:hover {
+            background-color: #1565c0;
+        }
+    }
+    
+    input, textarea {
+        background-color: $dark-bg;
+        color: $dark-text;
+        border-color: #404040;
+    }
+    
+    code {
+        background-color: $dark-bg-secondary;
+        color: #64b5f6;
+    }
+    
+    pre {
+        background-color: $dark-bg-secondary;
+        color: $dark-text;
+        border-left-color: #1e88e5;
+    }
+}
+
+// Dark mode toggle button styling
+.dark-mode-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    
+    &:hover {
+        transform: rotate(20deg) scale(1.1);
+    }
+}

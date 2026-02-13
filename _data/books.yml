@@ -1,0 +1,125 @@
+# Shia Islamic Digital Library - Books and Sections Data
+# This is the single source of truth for all books and categories
+# مكتبة شيعية رقمية - بيانات الكتب والأقسام
+
+sections:
+  - id: quran
+    title: القرآن الكريم
+    description: النصوص القرآنية والتلاوات
+    icon: quran
+    order: 1
+
+  - id: hadith
+    title: الأحاديث الشريفة
+    description: أحاديث أئمة أهل البيت عليهم السلام
+    icon: book
+    order: 2
+
+  - id: tafseer
+    title: التفسير والتأويل
+    description: تفسير آيات القرآن الكريم
+    icon: scroll
+    order: 3
+
+  - id: fiqh
+    title: الفقه الإسلامي
+    description: أحكام الشريعة الإسلامية
+    icon: gavel
+    order: 4
+
+  - id: history
+    title: التاريخ الإسلامي
+    description: السيرة والتاريخ الشيعي
+    icon: landmark
+    order: 5
+
+books:
+  - id: book-1
+    title: الدعاء الكامل
+    author: الإمام علي بن موسى الرضا
+    section: hadith
+    description: مجموعة من الأدعية المأثورة عن أئمة أهل البيت
+    pages: 150
+    content_type: single
+    order: 1
+
+  - id: book-2
+    title: نهج البلاغة
+    author: الإمام علي بن أبي طالب
+    section: hadith
+    description: خطب وسادات الإمام علي عليه السلام
+    pages: 250
+    content_type: single
+    order: 2
+
+  - id: book-3
+    title: تفسير العياشي
+    author: محمد بن مسعود العياشي
+    section: tafseer
+    description: تفسير مختار من تفسير العياشي المجلسي
+    pages: 200
+    content_type: single
+    order: 3
+
+  - id: book-4
+    title: أصول الفقه
+    author: آية الله محسن الحكيم
+    section: fiqh
+    description: أساسيات فقه الشريعة الإسلامية
+    pages: 180
+    content_type: single
+    order: 4
+
+  - id: book-5
+    title: سيرة الرسول الأعظم
+    author: محمد باقر المجلسي
+    section: history
+    description: السيرة النبوية الشريفة
+    pages: 220
+    content_type: single
+    order: 5
+
+  - id: book-6
+    title: حياة الإمام الحسين
+    author: مرتضى موسوي
+    section: history
+    description: سيرة الإمام الحسين عليه السلام
+    pages: 190
+    content_type: single
+    order: 6
+
+  - id: book-7
+    title: كتاب التوحيد
+    author: الشيخ الصدوق
+    section: fiqh
+    description: التوحيد والعقائد الإسلامية
+    pages: 160
+    content_type: single
+    order: 7
+
+  - id: book-8
+    title: الاختصاص
+    author: الشيخ المفيد
+    section: tafseer
+    description: في خصائص أمير المؤمنين عليه السلام
+    pages: 140
+    content_type: single
+    order: 8
+
+  - id: book-9
+    title: أخبار الدولة العباسية
+    author: أبو حنيفة الدينوري
+    section: history
+    description: التاريخ السياسي للدولة الإسلامية
+    pages: 210
+    content_type: single
+    order: 9
+
+  - id: book-10
+    title: منهاج الأحكام الشرعية
+    author: آية الله الخوئي
+    section: fiqh
+    description: الأحكام الفقهية المستخرجة من الكتاب والسُنة
+    pages: 230
+    content_type: single
+    order: 10

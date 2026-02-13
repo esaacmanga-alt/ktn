@@ -1,0 +1,164 @@
+// Variables and color scheme
+$primary-color: #2c3e50;
+$primary-light: #34495e;
+$secondary-color: #16a085;
+$accent-color: #e74c3c;
+$text-dark: #2c3e50;
+$text-light: #7f8c8d;
+$border-color: #ecf0f1;
+$background-light: #f8f9fa;
+
+// Dark mode colors
+$dark-bg: #1a1a1a;
+$dark-bg-secondary: #2d2d2d;
+$dark-text: #e0e0e0;
+$dark-text-light: #a0a0a0;
+
+// Typography
+$font-primary: 'Cairo', 'Droid Arabic Naskh', sans-serif;
+$font-mono: 'Monaco', 'Courier New', monospace;
+$font-size-base: 16px;
+$line-height-base: 1.6;
+
+// Spacing
+$spacing-xs: 0.5rem;
+$spacing-sm: 1rem;
+$spacing-md: 1.5rem;
+$spacing-lg: 2rem;
+$spacing-xl: 3rem;
+
+// Breakpoints
+$breakpoint-sm: 640px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1280px;
+
+// Shadows and effects
+$shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+$shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.2);
+
+// Reset and Base Styles
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: $font-size-base;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: $font-primary;
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    color: $text-dark;
+    background-color: #ffffff;
+    direction: rtl;
+    text-align: right;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+// Headings
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    margin: $spacing-md 0 $spacing-sm;
+    color: $primary-color;
+    line-height: 1.4;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
+h5 { font-size: 1.125rem; }
+h6 { font-size: 1rem; }
+
+// Paragraphs
+p {
+    margin-bottom: $spacing-md;
+}
+
+// Links
+a {
+    color: $secondary-color;
+    text-decoration: none;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+    
+    &:hover {
+        text-decoration: underline;
+        color: darken($secondary-color, 10%);
+    }
+}
+
+// Buttons
+button, .btn {
+    font-family: $font-primary;
+    padding: $spacing-sm $spacing-md;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: $font-size-base;
+    transition: all 0.3s ease;
+    
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: $shadow-md;
+    }
+    
+    &:active {
+        transform: translateY(0);
+    }
+}
+
+.btn-primary {
+    background-color: $secondary-color;
+    color: #ffffff;
+    
+    &:hover {
+        background-color: darken($secondary-color, 10%);
+    }
+}
+
+.btn-secondary {
+    background-color: $text-light;
+    color: #ffffff;
+    
+    &:hover {
+        background-color: darken($text-light, 10%);
+    }
+}
+
+// Utility Classes
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: $primary-color;
+    color: white;
+    padding: $spacing-sm;
+    z-index: 100;
+    
+    &:focus {
+        top: 0;
+    }
+}
+
+// Container
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: $spacing-lg;
+}
+
+// Accessories
+.heart {
+    color: $accent-color;
+}
+
+// Include other SCSS files
+@import 'dark-mode';
+@import 'arabic';
+@import 'responsive';

@@ -1,0 +1,41 @@
+<!-- Header Component -->
+<header class="site-header">
+    <div class="header-container">
+        <!-- Logo and Brand -->
+        <div class="header-brand">
+            <a href="{{ '/' | relative_url }}" class="logo">
+                <span class="logo-text">📚 المكتبة الشيعية</span>
+            </a>
+        </div>
+        
+        <!-- Navigation Menu -->
+        <nav class="header-nav">
+            <ul class="nav-links">
+                <li><a href="{{ '/' | relative_url }}">الرئيسية</a></li>
+                <li><a href="{{ '/about' | relative_url }}">عن المكتبة</a></li>
+                <li><a href="#browse">تصفح الكتب</a></li>
+                <li><a href="{{ '/contact' | relative_url }}">اتصل بنا</a></li>
+            </ul>
+        </nav>
+        
+        <!-- Header Actions -->
+        <div class="header-actions">
+            <button class="header-theme-toggle dark-mode-toggle" title="تبديل الوضع">
+                <span class="icon">🌙</span>
+            </button>
+            <button class="header-menu-toggle" id="mobile-menu-toggle" title="القائمة">
+                <span class="icon">☰</span>
+            </button>
+        </div>
+    </div>
+    
+    <!-- Mobile Navigation (Hidden by default) -->
+    <nav class="mobile-nav" id="mobile-nav">
+        <ul class="mobile-nav-links">
+            <li><a href="{{ '/' | relative_url }}">الرئيسية</a></li>
+            <li><a href="{{ '/about' | relative_url }}">عن المكتبة</a></li>
+            <li><a href="#browse">تصفح الكتب</a></li>
+            <li><a href="{{ '/contact' | relative_url }}">اتصل بنا</a></li>
+        </ul>
+    </nav>
+</header>

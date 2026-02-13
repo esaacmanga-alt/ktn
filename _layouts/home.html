@@ -1,0 +1,66 @@
+---
+layout: default
+---
+
+<div class="home-container">
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">{{ site.title }}</h1>
+            <p class="hero-subtitle">{{ site.description }}</p>
+            
+            <!-- Search Bar -->
+            {% include search-box.html %}
+        </div>
+    </section>
+    
+    <!-- Sections and Books -->
+    <div class="sections-container">
+        {% assign sections = site.data.books.sections | sort: "order" %}
+        {% for section in sections %}
+            <section class="section-block" id="section-{{ section.id }}">
+                <div class="section-header">
+                    <h2 class="section-title">{{ section.title }}</h2>
+                    <p class="section-description">{{ section.description }}</p>
+                </div>
+                
+                <!-- Books Grid -->
+                <div class="books-grid">
+                    {% assign books = site.data.books.books | where: "section", section.id | sort: "order" %}
+                    {% for book in books %}
+                        <div class="book-card">
+                            <div class="book-card-inner">
+                                <!-- Book Cover Placeholder -->
+                                <div class="book-cover">
+                                    <div class="cover-placeholder">
+                                        <span class="cover-icon">📖</span>
+                                    </div>
+                                </div>
+                                
+                                <!-- Book Info -->
+                                <div class="book-info">
+                                    <h3 class="book-title">{{ book.title }}</h3>
+                                    <p class="book-author">{{ book.author }}</p>
+                                    <p class="book-description">{{ book.description }}</p>
+                                    
+                                    <!-- Meta Info -->
+                                    <div class="book-meta">
+                                        <span class="pages-count">📄 {{ book.pages }} صفحة</span>
+                                    </div>
+                                    
+                                    <!-- Read Button -->
+                                    <a href="{{ '/books/' | relative_url }}{{ book.id }}/" class="btn btn-primary">اقرأ الآن</a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </section>
+        {% endfor %}
+    </div>
+</div>
+
+<script>
+    // Search through books data on page load
+    window.booksData = {{ site.data.books | jsonify }};
+</script>
