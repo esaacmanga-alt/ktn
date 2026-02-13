@@ -118,7 +118,7 @@ button, .btn {
     color: #ffffff;
     
     &:hover {
-        background-color: darken($secondary-color, 10%);
+        background-color: color-mix(in srgb, $secondary-color 85%, black);
     }
 }
 
@@ -127,7 +127,7 @@ button, .btn {
     color: #ffffff;
     
     &:hover {
-        background-color: darken($text-light, 10%);
+        background-color: color-mix(in srgb, $text-light 85%, black);
     }
 }
 

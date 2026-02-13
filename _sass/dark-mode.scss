@@ -10,7 +10,7 @@ html.dark-mode {
     }
     
     h1, h2, h3, h4, h5, h6 {
-        color: lighten($dark-text, 10%);
+        color: color-mix(in srgb, $dark-text 110%, white);
     }
     
     a {
