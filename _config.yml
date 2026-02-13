@@ -70,8 +70,8 @@ include:
   - .htaccess
 
 # Pagination
-paginate: 10
-paginate_path: "/page:num/"
+# paginate: 10
+# paginate_path: "/page:num/"
 
 # Feed
 feed:

@@ -1,5 +1,7 @@
 // Responsive Design - Mobile First Approach
 
+@use 'sass:color';
+
 // =======================
 // SITE HEADER & NAVIGATION
 // =======================
@@ -258,7 +260,7 @@
     font-size: 1.5rem;
     
     &:hover {
-        background-color: darken($accent-color, 10%);
+        background-color: color.adjust($accent-color, $lightness: -10%);
     }
 }
 
@@ -329,7 +331,7 @@
 }
 
 .book-cover {
-    background: linear-gradient(135deg, $secondary-color 0%, lighten($secondary-color, 20%) 100%);
+    background: linear-gradient(135deg, $secondary-color 0%, color.adjust($secondary-color, $lightness: 20%) 100%);
     height: 200px;
     display: flex;
     align-items: center;
@@ -637,7 +639,7 @@
     transition: all 0.3s ease;
     
     &:hover {
-        background-color: darken($secondary-color, 10%);
+        background-color: color.adjust($secondary-color, $lightness: -10%);
         text-decoration: none;
     }
 }

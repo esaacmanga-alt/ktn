@@ -1,6 +1,8 @@
 // Dark Mode Styles
 // Applied when .dark-mode class is on html element
 
+@use 'sass:color';
+
 html.dark-mode {
     color-scheme: dark;
     
@@ -15,9 +17,9 @@ html.dark-mode {
     
     a {
         color: #64b5f6;
-        
+
         &:hover {
-            color: lighten(#64b5f6, 10%);
+            color: color.adjust(#64b5f6, $lightness: 10%);
         }
     }
     
@@ -37,7 +39,7 @@ html.dark-mode {
         border-color: #404040;
         
         .book-title {
-            color: lighten($dark-text, 10%);
+            color: color.adjust($dark-text, $lightness: 10%);
         }
         
         .book-author,
@@ -47,10 +49,10 @@ html.dark-mode {
     }
     
     .hero-section {
-        background: linear-gradient(135deg, $dark-bg-secondary 0%, darken($dark-bg-secondary, 5%) 100%);
-        
+        background: linear-gradient(135deg, $dark-bg-secondary 0%, color.adjust($dark-bg-secondary, $lightness: -5%) 100%);
+
         .hero-title {
-            color: lighten($dark-text, 15%);
+            color: color.adjust($dark-text, $lightness: 15%);
         }
         
         .hero-subtitle {
@@ -69,7 +71,7 @@ html.dark-mode {
         border-right-color: #404040;
         
         h2 {
-            color: lighten($dark-text, 10%);
+            color: color.adjust($dark-text, $lightness: 10%);
         }
         
         .toc-link {
@@ -110,11 +112,11 @@ html.dark-mode {
             color: $dark-text-light;
             
             .search-result-title {
-                color: lighten($dark-text, 10%);
+                color: color.adjust($dark-text, $lightness: 10%);
             }
-            
+
             &:hover {
-                background-color: lighten($dark-bg-secondary, 5%);
+                background-color: color.adjust($dark-bg-secondary, $lightness: 5%);
             }
         }
     }

@@ -1,4 +1,5 @@
 // Variables and color scheme
+@use 'sass:color';
 $primary-color: #2c3e50;
 $primary-light: #34495e;
 $secondary-color: #16a085;
@@ -89,7 +90,7 @@ a {
     
     &:hover {
         text-decoration: underline;
-        color: darken($secondary-color, 10%);
+        color: color-mix(in srgb, $secondary-color 90%, black);
     }
 }
 

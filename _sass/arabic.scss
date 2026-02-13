@@ -1,5 +1,7 @@
 // Arabic and RTL Support
 
+@use 'sass:color';
+
 body {
     direction: rtl;
     text-align: right;
@@ -57,7 +59,7 @@ body {
     
     // Hadith styling
     .hadith {
-        background-color: lighten($secondary-color, 45%);
+        background-color: color.adjust($secondary-color, $lightness: 45%);
         padding: $spacing-md;
         border-right: 4px solid $secondary-color;
         margin: $spacing-md 0;
