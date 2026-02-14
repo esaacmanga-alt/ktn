@@ -24,19 +24,41 @@ body {
 }
 
 // Headings
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-weight: 700;
     margin: $spacing-md 0 $spacing-sm;
     color: $primary-color;
     line-height: 1.4;
 }
 
-h1 { font-size: 2.5rem; }
-h2 { font-size: 2rem; }
-h3 { font-size: 1.5rem; }
-h4 { font-size: 1.25rem; }
-h5 { font-size: 1.125rem; }
-h6 { font-size: 1rem; }
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+h4 {
+    font-size: 1.25rem;
+}
+
+h5 {
+    font-size: 1.125rem;
+}
+
+h6 {
+    font-size: 1rem;
+}
 
 // Paragraphs
 p {
@@ -48,7 +70,7 @@ a {
     color: $secondary-color;
     text-decoration: none;
     transition: color 0.3s ease, text-decoration 0.3s ease;
-    
+
     &:hover {
         text-decoration: underline;
         color: color-mix(in srgb, $secondary-color 90%, black);
@@ -56,7 +78,8 @@ a {
 }
 
 // Buttons
-button, .btn {
+button,
+.btn {
     font-family: $font-primary;
     padding: $spacing-sm $spacing-md;
     border: none;
@@ -64,12 +87,12 @@ button, .btn {
     cursor: pointer;
     font-size: $font-size-base;
     transition: all 0.3s ease;
-    
+
     &:hover {
         transform: translateY(-2px);
         box-shadow: $shadow-md;
     }
-    
+
     &:active {
         transform: translateY(0);
     }
@@ -78,7 +101,7 @@ button, .btn {
 .btn-primary {
     background-color: $secondary-color;
     color: #ffffff;
-    
+
     &:hover {
         background-color: color-mix(in srgb, $secondary-color 85%, black);
     }
@@ -87,7 +110,7 @@ button, .btn {
 .btn-secondary {
     background-color: $text-light;
     color: #ffffff;
-    
+
     &:hover {
         background-color: color-mix(in srgb, $text-light 85%, black);
     }
@@ -102,7 +125,7 @@ button, .btn {
     color: white;
     padding: $spacing-sm;
     z-index: 100;
-    
+
     &:focus {
         top: 0;
     }
@@ -119,8 +142,3 @@ button, .btn {
 .heart {
     color: $accent-color;
 }
-
-// Include other SCSS files (module system)
-@use 'dark-mode' as *;
-@use 'arabic' as *;
-@use 'responsive' as *;
