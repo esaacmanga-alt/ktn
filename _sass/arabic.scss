@@ -1,6 +1,7 @@
 // Arabic and RTL Support
 
 @use 'sass:color';
+@use 'variables' as *;
 
 body {
     direction: rtl;

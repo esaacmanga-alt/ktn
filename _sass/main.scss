@@ -1,43 +1,4 @@
-// Variables and color scheme
-@use 'sass:color';
-$primary-color: #2c3e50;
-$primary-light: #34495e;
-$secondary-color: #16a085;
-$accent-color: #e74c3c;
-$text-dark: #2c3e50;
-$text-light: #7f8c8d;
-$border-color: #ecf0f1;
-$background-light: #f8f9fa;
-
-// Dark mode colors
-$dark-bg: #1a1a1a;
-$dark-bg-secondary: #2d2d2d;
-$dark-text: #e0e0e0;
-$dark-text-light: #a0a0a0;
-
-// Typography
-$font-primary: 'Cairo', 'Droid Arabic Naskh', sans-serif;
-$font-mono: 'Monaco', 'Courier New', monospace;
-$font-size-base: 16px;
-$line-height-base: 1.6;
-
-// Spacing
-$spacing-xs: 0.5rem;
-$spacing-sm: 1rem;
-$spacing-md: 1.5rem;
-$spacing-lg: 2rem;
-$spacing-xl: 3rem;
-
-// Breakpoints
-$breakpoint-sm: 640px;
-$breakpoint-md: 768px;
-$breakpoint-lg: 1024px;
-$breakpoint-xl: 1280px;
-
-// Shadows and effects
-$shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-$shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
-$shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.2);
+@use 'variables' as *;
 
 // Reset and Base Styles
 * {
@@ -159,7 +120,7 @@ button, .btn {
     color: $accent-color;
 }
 
-// Include other SCSS files
-@import 'dark-mode';
-@import 'arabic';
-@import 'responsive';
+// Include other SCSS files (module system)
+@use 'dark-mode' as *;
+@use 'arabic' as *;
+@use 'responsive' as *;

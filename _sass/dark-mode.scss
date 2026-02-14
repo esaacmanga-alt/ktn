@@ -2,6 +2,7 @@
 // Applied when .dark-mode class is on html element
 
 @use 'sass:color';
+@use 'variables' as *;
 
 html.dark-mode {
     color-scheme: dark;
