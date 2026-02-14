@@ -13,4 +13,5 @@ gem "webrick", "~> 1.8"  # For Windows support
 # Windows dependencies
 platforms :mingw, :x64_mingw, :mswin do
   gem "wdm", ">= 0.1.1"
+  gem "tzinfo-data"
 end
