@@ -10,7 +10,7 @@ locale: ar_SA
 
 # URL and baseurl for GitHub Pages
 url: "https://esaacmanga-alt.github.io"
-baseurl: "/mktba"
+baseurl: "" # Set to "" for local development, or "/repo-name" for project pages
 timezone: Asia/Baghdad
 
 # Build Settings
